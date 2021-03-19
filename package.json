@@ -1,0 +1,25 @@
+{
+  "name": "sdc-ratings-reviews",
+  "version": "1.0.0",
+  "description": "Serves the front-end from FEC with all data related to the | Ratings & Reviews | component. This is the back-end server and database for the FEC project with all related API routes defined",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Backend-Breadwinners/sdc-ratings-reviews.git"
+  },
+  "author": "Graham Kirsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Backend-Breadwinners/sdc-ratings-reviews/issues"
+  },
+  "homepage": "https://github.com/Backend-Breadwinners/sdc-ratings-reviews#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1"
+  }
+}

@@ -1,23 +1,29 @@
-# sdc-ratings-reviews
-# basic commands in postgres
+#About:
+Project Catwalk is a front-end design for a ficticious e-commerce website. Users can browse through stylish clothing options and add them to their cart. They can also read through questions and answers submitted by previous shoppers. Users can even view product ratings and reviews and submit their own.
 
-\c connect to database
-\l list databases
-\dt list tables for database
-\d+ tablename describe table
-\i load schema file
+The design of the SDC-ratings-reviews repo is a fully functional and re-designed backend database and server that connects to the frontend of the Project Catwalk website
 
-load schema from outside postgres
-psql postgres -f '/Users/grahamkirsh/Desktop/SDC/RRserviceRepository/schema.sql';
+#Authors:
+Graham Kirsh (Github: 21grahams), Ryne Schroder (Github: ryne2010), Dorien Pine (Github: Initial-D-cmd)
 
+#Built With:
+1. React
+2. React Bootstrap
+3. React Router
+4. Material UI
+5. Vanilla CSS
+6. HTML
+7. Axios
+8. Moment
+9. Circle ci
+10. Webpack
+11. Jest
+12. Enzyme
+13. Express
+14. NodeJS
+15. Babel
 
-SET session_replication_role = 'replica';
+#Running this application
 
-SET session_replication_role = 'origin';
-
-
-load data from csv file
-\copy [tablename] from '/Users/grahamkirsh/TERMINAL/Immersive/Sprints/SDC/Downloads/reviews-photos.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF-8'
-
-
-log in to psql: psql -U  postgres -f'/Users/grahamkirsh/TERMINAL/Immersive/Sprints/SDC/sdc-ratings-reviews/database.sql'
+#open a terminal in root directory then:
+execute the following commands: $ cd sdc-ratings-reviews $ npm start

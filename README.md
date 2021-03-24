@@ -1,12 +1,12 @@
-#About:
+# About:
 Project Catwalk is a front-end design for a ficticious e-commerce website. Users can browse through stylish clothing options and add them to their cart. They can also read through questions and answers submitted by previous shoppers. Users can even view product ratings and reviews and submit their own.
 
 The design of the SDC-ratings-reviews repo is a fully functional and re-designed backend database and server that connects to the frontend of the Project Catwalk website
 
-#Authors:
+# Authors:
 Graham Kirsh (Github: 21grahams), Ryne Schroder (Github: ryne2010), Dorien Pine (Github: Initial-D-cmd)
 
-#Built With:
+# Built With:
 1. React
 2. React Bootstrap
 3. React Router
@@ -23,7 +23,7 @@ Graham Kirsh (Github: 21grahams), Ryne Schroder (Github: ryne2010), Dorien Pine 
 14. NodeJS
 15. Babel
 
-#Running this application
+# Running this application
 
-#open a terminal in root directory then:
+# open a terminal in root directory then:
 execute the following commands: $ cd sdc-ratings-reviews $ npm start

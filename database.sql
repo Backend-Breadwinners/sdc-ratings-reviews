@@ -20,8 +20,11 @@ CREATE TABLE reviews (
     reviewer_email varchar(100),
     response varchar(2000),
     helpfulness integer,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
 );
+
+create index reviews_index_id on reviews (id);
+create index reviews_index_product on reviews (product_id);
 
 --===============================
 CREATE TABLE "reviews-photos" (
@@ -31,6 +34,8 @@ CREATE TABLE "reviews-photos" (
     PRIMARY KEY (id),
     FOREIGN KEY (review_id) REFERENCES reviews(id)
 );
+
+create index photos on "reviews-photos" (review_id);
 
 --===============================
 CREATE TABLE characteristics (

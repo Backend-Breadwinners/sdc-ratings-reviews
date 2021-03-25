@@ -5,6 +5,7 @@ const db = require('./queries.js')
 const port = 5000;
 const Router = require('express-promise-router')
 const router = new Router();
+const cors = require('cors')
 
 module.exports = router;
 
@@ -13,7 +14,7 @@ module.exports = router;
 //     Middleware
 //=====================
 app.use(express.json()); // => req.body
-
+app.use(cors());
 
 
 //=====================
@@ -29,13 +30,13 @@ app.get('/reviews/:id', (req, res) => {
       console.log('ERROR WITH GET REQUEST FOR REVIEWS', err)
       res.sendStatus(404);
     } else {
-      let upperInfo = {
-        product: req.params.id,
-        page: 0,
-        count: 100,
-        results: [...results.rows]
-      }
-      res.send(upperInfo)
+      // let upperInfo = {
+      //   product: req.params.id,
+      //   page: 0,
+      //   count: 100,
+      //   results: [...results.rows]
+      // }
+      res.send(results.rows)
     }
   });
 });
@@ -44,20 +45,39 @@ app.get('/reviews/:id', (req, res) => {
 //========get meta data===============
 app.get('/reviews/meta/', (req, res) => {
   let { id } = req.params;
-    db.getAllMeta( id, (err, results) => {
-    if (err) {
-      console.log('ERROR WITH GET REQUEST FOR META DATA', err)
-      res.sendStatus(404);
-    } else {
-      res.send(results.rows)
-    }
-  })
-})
+      res.send({
+        "product_id": "18201",
+        "ratings": {
+          2: 1,
+          3: 1,
+          4: 2,
+          // ...
+        },
+        "recommended": {
+          0: 5
+          // ...
+        },
+        "characteristics": {
+          "Size": {
+            "id": 14,
+            "value": "4.0000"
+          },
+          "Width": {
+            "id": 15,
+            "value": "3.5000"
+          },
+          "Comfort": {
+            "id": 16,
+            "value": "4.0000"
+          }
+        }
+      })
+    })
 
 //=======post review=========
 app.post('/reviews', (req, res) => {
-  const fullBody = [req.body.product_id, req.body.rating, req.body.date, req.body.summary, req.body.body, req.body.recommend, req.body.reported, req.body.reviewer_name, req.body.reviewer_email, req.body.response, req.body.helpfulness];
-  console.log('req.body: ', req.body)
+  const fullBody = [req.body.product_id, req.body.rating, new Date().toISOString(), req.body.summary, req.body.body, req.body.recommend, false, req.body.reviewer_name, req.body.reviewer_email, req.body.response, 0];
+  console.log('fullBody: ', fullBody)
   db.postReviews(fullBody, (err, results) => {
     if (err) {
       console.log('ERROR WITH POST REQUEST: ', err)
@@ -89,7 +109,16 @@ app.put('/reviews/:review_id/report', (req, res) => {
       console.log('ERROR PUT REQUEST: ', err)
       res.sendStatus(404);
     } else {
-      res.send('This has been reported')
+      // res.send('This has been reported')
+      // console.log('reviewId: ', review_id)
+      // db.deleteReport(review_id, (err, results) => {
+      //   if (err) {
+      //     console.log('ERROR WITH DELETING REPORT: ', err)
+      //     res.sendStatus(404);
+      //   } else {
+      //     res.end()
+      //   }
+      // })
     }
   })
 })

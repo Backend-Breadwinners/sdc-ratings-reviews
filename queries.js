@@ -129,10 +129,26 @@ const reviewReport = (id, cb) => {
   })
 }
 
+//===========================
+//     DELETE REVIEW
+//===========================
+const deleteReport = (id, cb) => {
+  let deleteReview = `DELETE FROM reviews WHERE id =${id}`;
+  console.log('deleteReview: ', deleteReview)
+  pool.query(deleteReview, (err, results) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, results);
+    }
+  });
+};
+
 module.exports = {
   getAllReviews,
   getAllMeta,
   postReviews,
   reviewHelpful,
-  reviewReport
+  reviewReport,
+  deleteReport
 }

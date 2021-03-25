@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
-const pool = require('./db');
+const pool = require('../db/index.js');
 const db = require('./queries.js')
 const port = 5000;
-const Router = require('express-promise-router')
-const router = new Router();
+// const Router = require('express-promise-router')
+// const router = new Router();
 const cors = require('cors')
-
-module.exports = router;
 
 
 //=====================

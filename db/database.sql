@@ -20,7 +20,7 @@ CREATE TABLE reviews (
     reviewer_email varchar(100),
     response varchar(2000),
     helpfulness integer,
-    PRIMARY KEY (id),
+    PRIMARY KEY (id)
 );
 
 create index reviews_index_id on reviews (id);

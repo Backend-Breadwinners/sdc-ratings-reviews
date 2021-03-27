@@ -1,29 +1,25 @@
-# About:
-Project Catwalk is a front-end design for a ficticious e-commerce website. Users can browse through stylish clothing options and add them to their cart. They can also read through questions and answers submitted by previous shoppers. Users can even view product ratings and reviews and submit their own.
+# System Design Capstone:
+Project Catwalk is an e-commerce web app that includes a product overview, comparison tools and outfit builder, user questions and answers, and a ratings and reviews breakdown. This sdc-ratings-reviews repository encompasses the back-end functionality that hosts the Ratings and Reviews section of the Project Catwalk e-commerce website.
 
-The design of the SDC-ratings-reviews repo is a fully functional and re-designed backend database and server that connects to the frontend of the Project Catwalk website
+## Getting Started
+Fork and clone the sdc-ratings-reviews repository to your preferred directory:
 
-# Authors:
-Graham Kirsh (Github: 21grahams), Ryne Schroder (Github: ryne2010), Dorien Pine (Github: Initial-D-cmd)
+$ git clone https://github.com/Backend-Breadwinners/sdc-ratings-reviews.git
 
-# Built With:
-1. React
-2. React Bootstrap
-3. React Router
-4. Material UI
-5. Vanilla CSS
-6. HTML
-7. Axios
-8. Moment
-9. Circle ci
-10. Webpack
-11. Jest
-12. Enzyme
-13. Express
-14. NodeJS
-15. Babel
+Open the project and install the dependencies included in the package.json:
 
-# Running this application
+$ npm install
 
-# open a terminal in root directory then:
-execute the following commands: $ cd sdc-ratings-reviews $ npm start
+Run the nodemon server:
+
+$ npm start
+
+## Technologies
+Project is created with:
+* Node v14.15.1
+* ExpressJS Node v4.17.1
+* Nodemon v2.0.7
+* Postgres pg v8.5.1
+## Authors:
+* [Graham Kirsh](http://https://github.com/21grahams)
+

@@ -3,8 +3,6 @@ const app = express();
 const pool = require('../db/index.js');
 const db = require('./queries.js')
 const port = 5000;
-// const Router = require('express-promise-router')
-// const router = new Router();
 const cors = require('cors')
 
 
@@ -28,12 +26,6 @@ app.get('/reviews/:id', (req, res) => {
       console.log('ERROR WITH GET REQUEST FOR REVIEWS', err)
       res.sendStatus(404);
     } else {
-      // let upperInfo = {
-      //   product: req.params.id,
-      //   page: 0,
-      //   count: 100,
-      //   results: [...results.rows]
-      // }
       res.send(results.rows)
     }
   });
@@ -42,18 +34,15 @@ app.get('/reviews/:id', (req, res) => {
 
 //========get meta data===============
 app.get('/reviews/meta/', (req, res) => {
-  let { id } = req.params;
       res.send({
         "product_id": "18201",
         "ratings": {
           2: 1,
           3: 1,
           4: 2,
-          // ...
         },
         "recommended": {
           0: 5
-          // ...
         },
         "characteristics": {
           "Size": {
@@ -107,16 +96,8 @@ app.put('/reviews/:review_id/report', (req, res) => {
       console.log('ERROR PUT REQUEST: ', err)
       res.sendStatus(404);
     } else {
-      // res.send('This has been reported')
-      // console.log('reviewId: ', review_id)
-      // db.deleteReport(review_id, (err, results) => {
-      //   if (err) {
-      //     console.log('ERROR WITH DELETING REPORT: ', err)
-      //     res.sendStatus(404);
-      //   } else {
-      //     res.end()
-      //   }
-      // })
+      res.send('This has been reported')
+      console.log('reviewId: ', review_id)
     }
   })
 })
